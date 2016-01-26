@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace GraderFormControl
 {
-    public partial class UserControl1: UserControl
+    public partial class HomeworkFormControl: UserControl
     {
-        public UserControl1()
+        public HomeworkFormControl()
         {
             InitializeComponent();
         }

@@ -1,6 +1,6 @@
 ﻿namespace GraderFormControl
 {
-    partial class UserControl1
+    partial class HomeworkFormControl
     {
         /// <summary>
         /// Required designer variable.

@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Homework Grader by Matthew Maginniss", "Homework Grader by Matthew Maginniss\Homework Grader by Matthew Maginniss.csproj", "{24113E67-49DD-495C-8EB3-DECDAF5D8F07}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Grader Windows Form Application", "Homework Grader by Matthew Maginniss\Grader Windows Form Application.csproj", "{24113E67-49DD-495C-8EB3-DECDAF5D8F07}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GraderFormControl", "GraderFormControl\GraderFormControl.csproj", "{F847710C-6626-4556-B0F4-702CFDE3200C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{24113E67-49DD-495C-8EB3-DECDAF5D8F07}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{24113E67-49DD-495C-8EB3-DECDAF5D8F07}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{24113E67-49DD-495C-8EB3-DECDAF5D8F07}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F847710C-6626-4556-B0F4-702CFDE3200C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F847710C-6626-4556-B0F4-702CFDE3200C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F847710C-6626-4556-B0F4-702CFDE3200C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F847710C-6626-4556-B0F4-702CFDE3200C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

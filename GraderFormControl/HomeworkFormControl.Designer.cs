@@ -34,6 +34,8 @@
             this.btnFour = new System.Windows.Forms.RadioButton();
             this.dgvComments = new System.Windows.Forms.DataGridView();
             this.boxRadioButtons = new System.Windows.Forms.GroupBox();
+            this.clmnCheckBox = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.clmnCommentArea = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvComments)).BeginInit();
             this.boxRadioButtons.SuspendLayout();
             this.SuspendLayout();
@@ -83,8 +85,12 @@
             // dgvComments
             // 
             this.dgvComments.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvComments.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.clmnCheckBox,
+            this.clmnCommentArea});
             this.dgvComments.Location = new System.Drawing.Point(163, 24);
             this.dgvComments.Name = "dgvComments";
+            this.dgvComments.RowHeadersVisible = false;
             this.dgvComments.Size = new System.Drawing.Size(360, 290);
             this.dgvComments.TabIndex = 4;
             // 
@@ -96,10 +102,21 @@
             this.boxRadioButtons.Controls.Add(this.btnThree);
             this.boxRadioButtons.Location = new System.Drawing.Point(18, 40);
             this.boxRadioButtons.Name = "boxRadioButtons";
-            this.boxRadioButtons.Size = new System.Drawing.Size(111, 108);
+            this.boxRadioButtons.Size = new System.Drawing.Size(104, 108);
             this.boxRadioButtons.TabIndex = 5;
             this.boxRadioButtons.TabStop = false;
             this.boxRadioButtons.Text = "Grade";
+            // 
+            // clmnCheckBox
+            // 
+            this.clmnCheckBox.HeaderText = "Add";
+            this.clmnCheckBox.Name = "clmnCheckBox";
+            this.clmnCheckBox.Width = 35;
+            // 
+            // clmnCommentArea
+            // 
+            this.clmnCommentArea.HeaderText = "Comments";
+            this.clmnCommentArea.Name = "clmnCommentArea";
             // 
             // HomeworkFormControl
             // 
@@ -124,5 +141,7 @@
         private System.Windows.Forms.RadioButton btnFour;
         private System.Windows.Forms.DataGridView dgvComments;
         private System.Windows.Forms.GroupBox boxRadioButtons;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn clmnCheckBox;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmnCommentArea;
     }
 }

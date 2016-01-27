@@ -17,6 +17,12 @@ namespace GraderFormControl
         public HomeworkFormControl()
         {
             this.InitializeComponent();
+
+            this.btnOne.Tag = 3;
+            this.btnTwo.Tag = 2;
+            this.btnThree.Tag = 1;
+            this.btnFour.Tag = 0;
+            this.MaxPoints = (int)this.btnOne.Tag;
         }
 
         #endregion

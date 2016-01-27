@@ -32,76 +32,87 @@
             this.btnTwo = new System.Windows.Forms.RadioButton();
             this.btnThree = new System.Windows.Forms.RadioButton();
             this.btnFour = new System.Windows.Forms.RadioButton();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.dgvComments = new System.Windows.Forms.DataGridView();
+            this.boxRadioButtons = new System.Windows.Forms.GroupBox();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvComments)).BeginInit();
+            this.boxRadioButtons.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnOne
             // 
             this.btnOne.AutoSize = true;
-            this.btnOne.Location = new System.Drawing.Point(32, 60);
+            this.btnOne.Checked = true;
+            this.btnOne.Location = new System.Drawing.Point(6, 16);
             this.btnOne.Name = "btnOne";
-            this.btnOne.Size = new System.Drawing.Size(31, 17);
+            this.btnOne.Size = new System.Drawing.Size(80, 17);
             this.btnOne.TabIndex = 0;
             this.btnOne.TabStop = true;
-            this.btnOne.Text = "1";
+            this.btnOne.Text = "Exceptional";
             this.btnOne.UseVisualStyleBackColor = true;
             // 
             // btnTwo
             // 
             this.btnTwo.AutoSize = true;
-            this.btnTwo.Location = new System.Drawing.Point(32, 83);
+            this.btnTwo.Location = new System.Drawing.Point(6, 39);
             this.btnTwo.Name = "btnTwo";
-            this.btnTwo.Size = new System.Drawing.Size(85, 17);
+            this.btnTwo.Size = new System.Drawing.Size(79, 17);
             this.btnTwo.TabIndex = 1;
-            this.btnTwo.TabStop = true;
-            this.btnTwo.Text = "radioButton2";
+            this.btnTwo.Text = "Acceptable";
             this.btnTwo.UseVisualStyleBackColor = true;
             // 
             // btnThree
             // 
             this.btnThree.AutoSize = true;
-            this.btnThree.Location = new System.Drawing.Point(32, 106);
+            this.btnThree.Location = new System.Drawing.Point(6, 62);
             this.btnThree.Name = "btnThree";
-            this.btnThree.Size = new System.Drawing.Size(85, 17);
+            this.btnThree.Size = new System.Drawing.Size(64, 17);
             this.btnThree.TabIndex = 2;
-            this.btnThree.TabStop = true;
-            this.btnThree.Text = "radioButton3";
+            this.btnThree.Text = "Amateur";
             this.btnThree.UseVisualStyleBackColor = true;
             // 
             // btnFour
             // 
             this.btnFour.AutoSize = true;
-            this.btnFour.Location = new System.Drawing.Point(32, 129);
+            this.btnFour.Location = new System.Drawing.Point(6, 85);
             this.btnFour.Name = "btnFour";
-            this.btnFour.Size = new System.Drawing.Size(85, 17);
+            this.btnFour.Size = new System.Drawing.Size(92, 17);
             this.btnFour.TabIndex = 3;
-            this.btnFour.TabStop = true;
-            this.btnFour.Text = "radioButton4";
+            this.btnFour.Text = "Unsatisfactory";
             this.btnFour.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // dgvComments
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(167, 35);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(240, 150);
-            this.dataGridView1.TabIndex = 4;
+            this.dgvComments.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvComments.Location = new System.Drawing.Point(163, 24);
+            this.dgvComments.Name = "dgvComments";
+            this.dgvComments.Size = new System.Drawing.Size(360, 290);
+            this.dgvComments.TabIndex = 4;
+            // 
+            // boxRadioButtons
+            // 
+            this.boxRadioButtons.Controls.Add(this.btnTwo);
+            this.boxRadioButtons.Controls.Add(this.btnOne);
+            this.boxRadioButtons.Controls.Add(this.btnFour);
+            this.boxRadioButtons.Controls.Add(this.btnThree);
+            this.boxRadioButtons.Location = new System.Drawing.Point(18, 40);
+            this.boxRadioButtons.Name = "boxRadioButtons";
+            this.boxRadioButtons.Size = new System.Drawing.Size(111, 108);
+            this.boxRadioButtons.TabIndex = 5;
+            this.boxRadioButtons.TabStop = false;
+            this.boxRadioButtons.Text = "Grade";
             // 
             // HomeworkFormControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.btnFour);
-            this.Controls.Add(this.btnThree);
-            this.Controls.Add(this.btnTwo);
-            this.Controls.Add(this.btnOne);
+            this.Controls.Add(this.boxRadioButtons);
+            this.Controls.Add(this.dgvComments);
             this.Name = "HomeworkFormControl";
-            this.Size = new System.Drawing.Size(438, 221);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Size = new System.Drawing.Size(551, 338);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvComments)).EndInit();
+            this.boxRadioButtons.ResumeLayout(false);
+            this.boxRadioButtons.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -111,6 +122,7 @@
         private System.Windows.Forms.RadioButton btnTwo;
         private System.Windows.Forms.RadioButton btnThree;
         private System.Windows.Forms.RadioButton btnFour;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvComments;
+        private System.Windows.Forms.GroupBox boxRadioButtons;
     }
 }

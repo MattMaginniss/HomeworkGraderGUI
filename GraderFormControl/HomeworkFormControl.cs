@@ -17,12 +17,9 @@ namespace GraderFormControl
         public HomeworkFormControl()
         {
             this.InitializeComponent();
+            this.SetPointValue(3, 2, 1, 0);
 
-            this.btnOne.Tag = 3;
-            this.btnTwo.Tag = 2;
-            this.btnThree.Tag = 1;
-            this.btnFour.Tag = 0;
-            this.MaxPoints = (int)this.btnOne.Tag;
+            this.MaxPoints = (int) this.btnOne.Tag;
         }
 
         #endregion
@@ -33,6 +30,15 @@ namespace GraderFormControl
             this.btnTwo.Tag = two;
             this.btnThree.Tag = three;
             this.btnFour.Tag = four;
+            this.setButtonLabels();
+        }
+
+        private void setButtonLabels()
+        {
+            this.btnOne.Text = ("Exceptional (" + this.btnOne.Tag + ")");
+            this.btnTwo.Text = ("Acceptable (" + this.btnTwo.Tag + ")");
+            this.btnThree.Text = ("Amateur (" + this.btnThree.Tag + ")");
+            this.btnFour.Text = ("Unsatisfactory (" + this.btnFour.Tag + ")");
         }
     }
 }

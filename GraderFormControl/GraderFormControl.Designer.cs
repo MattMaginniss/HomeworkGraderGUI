@@ -1,6 +1,6 @@
 ﻿namespace GraderFormControl
 {
-    partial class HomeworkFormControl
+    partial class GraderFormControl
     {
         /// <summary>
         /// Required designer variable.
@@ -33,9 +33,9 @@
             this.btnThree = new System.Windows.Forms.RadioButton();
             this.btnFour = new System.Windows.Forms.RadioButton();
             this.dgvComments = new System.Windows.Forms.DataGridView();
-            this.boxRadioButtons = new System.Windows.Forms.GroupBox();
             this.clmnCheckBox = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.clmnCommentArea = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.boxRadioButtons = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvComments)).BeginInit();
             this.boxRadioButtons.SuspendLayout();
             this.SuspendLayout();
@@ -84,6 +84,8 @@
             // 
             // dgvComments
             // 
+            this.dgvComments.AllowUserToResizeColumns = false;
+            this.dgvComments.AllowUserToResizeRows = false;
             this.dgvComments.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvComments.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.clmnCheckBox,
@@ -93,6 +95,18 @@
             this.dgvComments.RowHeadersVisible = false;
             this.dgvComments.Size = new System.Drawing.Size(360, 290);
             this.dgvComments.TabIndex = 4;
+            // 
+            // clmnCheckBox
+            // 
+            this.clmnCheckBox.HeaderText = "Add";
+            this.clmnCheckBox.Name = "clmnCheckBox";
+            this.clmnCheckBox.Width = 35;
+            // 
+            // clmnCommentArea
+            // 
+            this.clmnCommentArea.HeaderText = "Comments";
+            this.clmnCommentArea.Name = "clmnCommentArea";
+            this.clmnCommentArea.Width = 322;
             // 
             // boxRadioButtons
             // 
@@ -106,18 +120,6 @@
             this.boxRadioButtons.TabIndex = 5;
             this.boxRadioButtons.TabStop = false;
             this.boxRadioButtons.Text = "Grade";
-            // 
-            // clmnCheckBox
-            // 
-            this.clmnCheckBox.HeaderText = "Add";
-            this.clmnCheckBox.Name = "clmnCheckBox";
-            this.clmnCheckBox.Width = 35;
-            // 
-            // clmnCommentArea
-            // 
-            this.clmnCommentArea.HeaderText = "Comments";
-            this.clmnCommentArea.Name = "clmnCommentArea";
-            this.clmnCommentArea.Width = 322;
             // 
             // HomeworkFormControl
             // 

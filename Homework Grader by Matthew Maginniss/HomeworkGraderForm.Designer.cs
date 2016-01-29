@@ -1,5 +1,6 @@
-﻿namespace Homework_Grader_by_Matthew_Maginniss
+﻿namespace HomeworkGrader
 {
+
     partial class HomeworkGraderForm
     {
         /// <summary>
@@ -13,9 +14,9 @@
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
-            if (disposing && (components != null))
+            if (disposing && (this.components != null))
             {
-                components.Dispose();
+                this.components.Dispose();
             }
             base.Dispose(disposing);
         }
@@ -34,9 +35,9 @@
             this.tabPageFunctionality = new System.Windows.Forms.TabPage();
             this.tabPageImplementation = new System.Windows.Forms.TabPage();
             this.tabPageDocumentation = new System.Windows.Forms.TabPage();
-            this.controlFunctionality = new GraderFormControl.HomeworkFormControl();
-            this.controlImplementation = new GraderFormControl.HomeworkFormControl();
-            this.controlDocumentation = new GraderFormControl.HomeworkFormControl();
+            this.controlFunctionality = new GraderFormControl.GraderFormControl();
+            this.controlImplementation = new GraderFormControl.GraderFormControl();
+            this.controlDocumentation = new GraderFormControl.GraderFormControl();
             this.tabControl.SuspendLayout();
             this.tabPageFunctionality.SuspendLayout();
             this.tabPageImplementation.SuspendLayout();
@@ -150,11 +151,11 @@
         private System.Windows.Forms.TabControl tabControl;
         private System.Windows.Forms.TabPage tabPageFunctionality;
         private System.Windows.Forms.TabPage tabPageImplementation;
-        private GraderFormControl.HomeworkFormControl homeworkFormControl1;
+        private GraderFormControl.GraderFormControl homeworkFormControl1;
         private System.Windows.Forms.TabPage tabPageDocumentation;
-        private GraderFormControl.HomeworkFormControl controlFunctionality;
-        private GraderFormControl.HomeworkFormControl controlImplementation;
-        private GraderFormControl.HomeworkFormControl controlDocumentation;
+        private GraderFormControl.GraderFormControl controlFunctionality;
+        private GraderFormControl.GraderFormControl controlImplementation;
+        private GraderFormControl.GraderFormControl controlDocumentation;
     }
 }
 

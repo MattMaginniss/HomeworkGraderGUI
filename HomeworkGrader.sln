@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Grader Windows Form Application", "Homework Grader by Matthew Maginniss\Grader Windows Form Application.csproj", "{24113E67-49DD-495C-8EB3-DECDAF5D8F07}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GraderWindowsFormApplication", "Homework Grader by Matthew Maginniss\GraderWindowsFormApplication.csproj", "{24113E67-49DD-495C-8EB3-DECDAF5D8F07}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GraderFormControl", "GraderFormControl\GraderFormControl.csproj", "{F847710C-6626-4556-B0F4-702CFDE3200C}"
 EndProject

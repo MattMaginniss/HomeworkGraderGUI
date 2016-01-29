@@ -3,7 +3,7 @@ using System.Windows.Forms;
 
 namespace GraderFormControl
 {
-    public partial class HomeworkFormControl : UserControl
+    public partial class GraderFormControl : UserControl
     {
         #region Properties
 
@@ -15,7 +15,7 @@ namespace GraderFormControl
 
         #region Constructors
 
-        public HomeworkFormControl()
+        public GraderFormControl()
         {
             this.InitializeComponent();
             this.SetPointValue(3, 2, 1, 0);
@@ -42,7 +42,7 @@ namespace GraderFormControl
             this.btnFour.Text = ("Unsatisfactory (" + this.btnFour.Tag + ")");
         }
 
-        public void addComment(string comment)
+        public void AddComment(string comment)
         {
             if (this.dgvComments.RowCount == 0)
             {

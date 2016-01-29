@@ -1,6 +1,6 @@
 ﻿using System.Windows.Forms;
 
-namespace Homework_Grader_by_Matthew_Maginniss
+namespace HomeworkGrader
 {
     public partial class HomeworkGraderForm : Form
     {

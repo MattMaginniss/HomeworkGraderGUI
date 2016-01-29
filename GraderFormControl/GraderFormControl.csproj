@@ -42,18 +42,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="HomeworkFormControl.cs">
+    <Compile Include="GraderFormControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="HomeworkFormControl.Designer.cs">
-      <DependentUpon>HomeworkFormControl.cs</DependentUpon>
+    <Compile Include="GraderFormControl.Designer.cs">
+      <DependentUpon>GraderFormControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="HomeworkFormControl.resx">
-      <DependentUpon>HomeworkFormControl.cs</DependentUpon>
+    <EmbeddedResource Include="GraderFormControl.resx">
+      <DependentUpon>GraderFormControl.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

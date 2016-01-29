@@ -7,8 +7,8 @@
     <ProjectGuid>{24113E67-49DD-495C-8EB3-DECDAF5D8F07}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Homework_Grader_by_Matthew_Maginniss</RootNamespace>
-    <AssemblyName>Homework Grader by Matthew Maginniss</AssemblyName>
+    <RootNamespace>HomeworkGrader</RootNamespace>
+    <AssemblyName>HomeworkGrader</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -65,6 +65,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

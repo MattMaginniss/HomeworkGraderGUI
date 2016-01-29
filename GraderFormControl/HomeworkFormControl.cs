@@ -40,5 +40,18 @@ namespace GraderFormControl
             this.btnThree.Text = ("Amateur (" + this.btnThree.Tag + ")");
             this.btnFour.Text = ("Unsatisfactory (" + this.btnFour.Tag + ")");
         }
+
+        public void addComment(string comment)
+        {
+            if (this.dgvComments.RowCount == 0)
+            {
+                this.dgvComments.Rows[0].Cells[1].Value = comment;
+            }
+            else
+            {
+                var rowIndex = this.dgvComments.Rows.Add();
+                this.dgvComments.Rows[rowIndex].Cells[1].Value = comment;
+            }
+        }
     }
 }

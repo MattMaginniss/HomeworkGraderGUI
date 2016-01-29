@@ -88,7 +88,7 @@
             this.dgvComments.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.clmnCheckBox,
             this.clmnCommentArea});
-            this.dgvComments.Location = new System.Drawing.Point(158, 22);
+            this.dgvComments.Location = new System.Drawing.Point(163, 24);
             this.dgvComments.Name = "dgvComments";
             this.dgvComments.RowHeadersVisible = false;
             this.dgvComments.Size = new System.Drawing.Size(360, 290);
@@ -100,9 +100,9 @@
             this.boxRadioButtons.Controls.Add(this.btnOne);
             this.boxRadioButtons.Controls.Add(this.btnFour);
             this.boxRadioButtons.Controls.Add(this.btnThree);
-            this.boxRadioButtons.Location = new System.Drawing.Point(22, 45);
+            this.boxRadioButtons.Location = new System.Drawing.Point(24, 47);
             this.boxRadioButtons.Name = "boxRadioButtons";
-            this.boxRadioButtons.Size = new System.Drawing.Size(104, 108);
+            this.boxRadioButtons.Size = new System.Drawing.Size(118, 108);
             this.boxRadioButtons.TabIndex = 5;
             this.boxRadioButtons.TabStop = false;
             this.boxRadioButtons.Text = "Grade";
@@ -117,6 +117,7 @@
             // 
             this.clmnCommentArea.HeaderText = "Comments";
             this.clmnCommentArea.Name = "clmnCommentArea";
+            this.clmnCommentArea.Width = 322;
             // 
             // HomeworkFormControl
             // 

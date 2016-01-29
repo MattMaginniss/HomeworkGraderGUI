@@ -1,4 +1,5 @@
-﻿using System.Windows.Forms;
+﻿using System.Linq;
+using System.Windows.Forms;
 
 namespace GraderFormControl
 {
@@ -6,7 +7,7 @@ namespace GraderFormControl
     {
         #region Properties
 
-        public int CurrentPoints { get; }
+        public int CurrentPoints => this.getCheckedButtonValue();
 
         public int MaxPoints { get; }
 
@@ -52,6 +53,12 @@ namespace GraderFormControl
                 var rowIndex = this.dgvComments.Rows.Add();
                 this.dgvComments.Rows[rowIndex].Cells[1].Value = comment;
             }
+        }
+
+        private int getCheckedButtonValue()
+        {
+            var checkedButton = this.boxRadioButtons.Controls.OfType<RadioButton>().FirstOrDefault(r => r.Checked);
+            return (int) checkedButton.Tag;
         }
     }
 }

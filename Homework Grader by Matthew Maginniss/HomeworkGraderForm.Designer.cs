@@ -33,11 +33,12 @@
             this.btnCopy = new System.Windows.Forms.Button();
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tabPageFunctionality = new System.Windows.Forms.TabPage();
-            this.tabPageImplementation = new System.Windows.Forms.TabPage();
-            this.tabPageDocumentation = new System.Windows.Forms.TabPage();
             this.controlFunctionality = new GraderFormControl.GraderFormControl();
+            this.tabPageImplementation = new System.Windows.Forms.TabPage();
             this.controlImplementation = new GraderFormControl.GraderFormControl();
+            this.tabPageDocumentation = new System.Windows.Forms.TabPage();
             this.controlDocumentation = new GraderFormControl.GraderFormControl();
+            this.btnClear = new System.Windows.Forms.Button();
             this.tabControl.SuspendLayout();
             this.tabPageFunctionality.SuspendLayout();
             this.tabPageImplementation.SuspendLayout();
@@ -54,7 +55,7 @@
             // 
             // btnCopy
             // 
-            this.btnCopy.Location = new System.Drawing.Point(252, 725);
+            this.btnCopy.Location = new System.Drawing.Point(200, 724);
             this.btnCopy.Name = "btnCopy";
             this.btnCopy.Size = new System.Drawing.Size(75, 23);
             this.btnCopy.TabIndex = 2;
@@ -83,6 +84,13 @@
             this.tabPageFunctionality.Text = "Functionality";
             this.tabPageFunctionality.UseVisualStyleBackColor = true;
             // 
+            // controlFunctionality
+            // 
+            this.controlFunctionality.Location = new System.Drawing.Point(-3, -1);
+            this.controlFunctionality.Name = "controlFunctionality";
+            this.controlFunctionality.Size = new System.Drawing.Size(551, 338);
+            this.controlFunctionality.TabIndex = 0;
+            // 
             // tabPageImplementation
             // 
             this.tabPageImplementation.Controls.Add(this.controlImplementation);
@@ -93,6 +101,13 @@
             this.tabPageImplementation.TabIndex = 1;
             this.tabPageImplementation.Text = "Implementation";
             this.tabPageImplementation.UseVisualStyleBackColor = true;
+            // 
+            // controlImplementation
+            // 
+            this.controlImplementation.Location = new System.Drawing.Point(-3, -1);
+            this.controlImplementation.Name = "controlImplementation";
+            this.controlImplementation.Size = new System.Drawing.Size(551, 338);
+            this.controlImplementation.TabIndex = 0;
             // 
             // tabPageDocumentation
             // 
@@ -105,20 +120,6 @@
             this.tabPageDocumentation.Text = "Documentation";
             this.tabPageDocumentation.UseVisualStyleBackColor = true;
             // 
-            // controlFunctionality
-            // 
-            this.controlFunctionality.Location = new System.Drawing.Point(-3, -1);
-            this.controlFunctionality.Name = "controlFunctionality";
-            this.controlFunctionality.Size = new System.Drawing.Size(551, 338);
-            this.controlFunctionality.TabIndex = 0;
-            // 
-            // controlImplementation
-            // 
-            this.controlImplementation.Location = new System.Drawing.Point(-3, -1);
-            this.controlImplementation.Name = "controlImplementation";
-            this.controlImplementation.Size = new System.Drawing.Size(551, 338);
-            this.controlImplementation.TabIndex = 0;
-            // 
             // controlDocumentation
             // 
             this.controlDocumentation.Location = new System.Drawing.Point(-3, -1);
@@ -126,11 +127,22 @@
             this.controlDocumentation.Size = new System.Drawing.Size(551, 338);
             this.controlDocumentation.TabIndex = 4;
             // 
+            // btnClear
+            // 
+            this.btnClear.Location = new System.Drawing.Point(304, 724);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(75, 23);
+            this.btnClear.TabIndex = 4;
+            this.btnClear.Text = "Clear";
+            this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+            // 
             // HomeworkGraderForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(579, 775);
+            this.Controls.Add(this.btnClear);
             this.Controls.Add(this.tabControl);
             this.Controls.Add(this.btnCopy);
             this.Controls.Add(this.txtOutput);
@@ -156,6 +168,7 @@
         private GraderFormControl.GraderFormControl controlFunctionality;
         private GraderFormControl.GraderFormControl controlImplementation;
         private GraderFormControl.GraderFormControl controlDocumentation;
+        private System.Windows.Forms.Button btnClear;
     }
 }
 

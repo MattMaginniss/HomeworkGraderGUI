@@ -1,7 +1,11 @@
-﻿using System.Windows.Forms;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Windows.Forms;
 
 namespace HomeworkGrader
 {
+    [Serializable]
     public partial class HomeworkGraderForm : Form
     {
         #region Constructors
@@ -12,9 +16,48 @@ namespace HomeworkGrader
             this.initializeFunctionalityControl();
             this.initializeImplementationControl();
             this.initializeDocumentationControl();
+
+            this.controlFunctionality.DataChanged += this.updateData;
+            this.controlImplementation.DataChanged += this.updateData;
+            this.controlDocumentation.DataChanged += this.updateData;
         }
 
         #endregion
+
+        private void updateData(object sender, GraderFormControl.GraderFormControl.DataChangedEventArgs e)
+        {
+            var comments = new List<string> {this.getTotalHeader()};
+            foreach (TabPage currentPage in this.tabControl.TabPages)
+            {
+                var control =
+                    currentPage.Controls.Cast<GraderFormControl.GraderFormControl>()
+                               .FirstOrDefault(x => x != null);
+
+                var header = currentPage.Text + " " + control.CurrentPoints + "/" + control.MaxPoints +
+                             Environment.NewLine;
+
+                comments.Add(header);
+
+                var tabComments = control.GetCheckedComments() + Environment.NewLine;
+                comments.Add(tabComments);
+            }
+
+            this.clearTextBox();
+            foreach (var line in comments)
+            {
+                this.txtOutput.Text += line;
+            }
+        }
+
+        private string getTotalHeader()
+        {
+            var totalPoints = this.controlFunctionality.MaxPoints + this.controlImplementation.MaxPoints +
+                              this.controlDocumentation.MaxPoints;
+            var currentPoints = this.controlFunctionality.CurrentPoints + this.controlImplementation.CurrentPoints +
+                                this.controlDocumentation.CurrentPoints;
+            var totalHeader = "Total: " + currentPoints + "/" + totalPoints + Environment.NewLine + Environment.NewLine;
+            return totalHeader;
+        }
 
         private void initializeDocumentationControl()
         {
@@ -35,6 +78,19 @@ namespace HomeworkGrader
             this.controlFunctionality.SetPointValue(11, 8, 3, 0);
             this.controlFunctionality.AddComment("Good Job!");
             this.controlFunctionality.AddComment("No issues were discovered");
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            this.controlDocumentation.ClearCheckBoxes();
+            this.controlImplementation.ClearCheckBoxes();
+            this.controlFunctionality.ClearCheckBoxes();
+            this.clearTextBox();
+        }
+
+        private void clearTextBox()
+        {
+            this.txtOutput.Text = "";
         }
     }
 }

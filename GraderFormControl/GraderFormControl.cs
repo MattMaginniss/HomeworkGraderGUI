@@ -62,6 +62,28 @@ namespace GraderFormControl
             }
         }
 
+        public string GetCheckedComments()
+        {
+            var comments = "";
+
+            foreach (DataGridViewRow row in this.dgvComments.Rows)
+            {
+                var cell = (DataGridViewCheckBoxCell) row.Cells[0];
+
+                if (Convert.ToBoolean(cell.EditingCellFormattedValue))
+                {
+                    var textCell = (DataGridViewTextBoxCell) row.Cells[1];
+
+                    if (textCell.Value != null)
+                    {
+                        comments += textCell.Value + Environment.NewLine;
+                    }
+                }
+            }
+
+            return comments;
+        }
+
         private int getCheckedButtonValue()
         {
             var checkedButton = this.boxRadioButtons.Controls.OfType<RadioButton>().FirstOrDefault(r => r.Checked);

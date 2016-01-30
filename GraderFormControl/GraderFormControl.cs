@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace GraderFormControl
@@ -59,6 +60,44 @@ namespace GraderFormControl
         {
             var checkedButton = this.boxRadioButtons.Controls.OfType<RadioButton>().FirstOrDefault(r => r.Checked);
             return (int) checkedButton.Tag;
+        }
+
+        public void ClearCheckBoxes()
+        {
+            foreach (DataGridViewRow row in this.dgvComments.Rows)
+            {
+                ((DataGridViewCheckBoxCell) row.Cells[0]).Value = false;
+            }
+        }
+
+        private void btn_CheckedChanged(object sender, EventArgs e)
+        {
+            DataChangedEventArgs args = new DataChangedEventArgs();
+            this.onDataChanged(args);
+        }
+
+        private void dgvComments_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DataChangedEventArgs args = new DataChangedEventArgs();
+            this.onDataChanged(args);
+        }
+
+        public class DataChangedEventArgs : EventArgs
+        {
+        }
+
+        //public delegate void MessageSentHandler(string message);
+
+        public event EventHandler<DataChangedEventArgs> DataChanged;
+
+        private void onDataChanged(DataChangedEventArgs args)
+        {
+            EventHandler<DataChangedEventArgs> handler = this.DataChanged;
+
+            if (handler != null)
+            {
+                handler(this, args);
+            }
         }
     }
 }

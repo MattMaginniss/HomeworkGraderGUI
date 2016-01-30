@@ -51,6 +51,7 @@
             this.btnOne.TabStop = true;
             this.btnOne.Text = "Exceptional";
             this.btnOne.UseVisualStyleBackColor = true;
+            this.btnOne.CheckedChanged += new System.EventHandler(this.btn_CheckedChanged);
             // 
             // btnTwo
             // 
@@ -61,6 +62,7 @@
             this.btnTwo.TabIndex = 1;
             this.btnTwo.Text = "Acceptable";
             this.btnTwo.UseVisualStyleBackColor = true;
+            this.btnTwo.CheckedChanged += new System.EventHandler(this.btn_CheckedChanged);
             // 
             // btnThree
             // 
@@ -71,6 +73,7 @@
             this.btnThree.TabIndex = 2;
             this.btnThree.Text = "Amateur";
             this.btnThree.UseVisualStyleBackColor = true;
+            this.btnThree.CheckedChanged += new System.EventHandler(this.btn_CheckedChanged);
             // 
             // btnFour
             // 
@@ -81,6 +84,7 @@
             this.btnFour.TabIndex = 3;
             this.btnFour.Text = "Unsatisfactory";
             this.btnFour.UseVisualStyleBackColor = true;
+            this.btnFour.CheckedChanged += new System.EventHandler(this.btn_CheckedChanged);
             // 
             // dgvComments
             // 
@@ -95,6 +99,7 @@
             this.dgvComments.RowHeadersVisible = false;
             this.dgvComments.Size = new System.Drawing.Size(360, 290);
             this.dgvComments.TabIndex = 4;
+            this.dgvComments.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvComments_CellContentClick);
             // 
             // clmnCheckBox
             // 
@@ -121,13 +126,13 @@
             this.boxRadioButtons.TabStop = false;
             this.boxRadioButtons.Text = "Grade";
             // 
-            // HomeworkFormControl
+            // GraderFormControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.boxRadioButtons);
             this.Controls.Add(this.dgvComments);
-            this.Name = "HomeworkFormControl";
+            this.Name = "GraderFormControl";
             this.Size = new System.Drawing.Size(551, 338);
             ((System.ComponentModel.ISupportInitialize)(this.dgvComments)).EndInit();
             this.boxRadioButtons.ResumeLayout(false);

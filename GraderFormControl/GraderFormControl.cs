@@ -10,7 +10,7 @@ namespace GraderFormControl
 
         public int CurrentPoints => this.getCheckedButtonValue();
 
-        public int MaxPoints { get; }
+        public int MaxPoints => (int) this.btnOne.Tag;
 
         #endregion
 
@@ -20,8 +20,14 @@ namespace GraderFormControl
         {
             this.InitializeComponent();
             this.SetPointValue(3, 2, 1, 0);
+        }
 
-            this.MaxPoints = (int) this.btnOne.Tag;
+        #endregion
+
+        #region Methods
+
+        public class DataChangedEventArgs : EventArgs
+        {
         }
 
         #endregion
@@ -72,18 +78,14 @@ namespace GraderFormControl
 
         private void btn_CheckedChanged(object sender, EventArgs e)
         {
-            DataChangedEventArgs args = new DataChangedEventArgs();
+            var args = new DataChangedEventArgs();
             this.onDataChanged(args);
         }
 
         private void dgvComments_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            DataChangedEventArgs args = new DataChangedEventArgs();
+            var args = new DataChangedEventArgs();
             this.onDataChanged(args);
-        }
-
-        public class DataChangedEventArgs : EventArgs
-        {
         }
 
         //public delegate void MessageSentHandler(string message);
@@ -92,7 +94,7 @@ namespace GraderFormControl
 
         private void onDataChanged(DataChangedEventArgs args)
         {
-            EventHandler<DataChangedEventArgs> handler = this.DataChanged;
+            var handler = this.DataChanged;
 
             if (handler != null)
             {

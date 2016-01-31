@@ -4,6 +4,7 @@ using System.Windows.Forms;
 
 namespace GraderFormControl
 {
+    [Serializable]
     public partial class GraderFormControl : UserControl
     {
         #region Properties
@@ -16,10 +17,14 @@ namespace GraderFormControl
 
         #region Constructors
 
+        /// <summary>
+        ///     Initializes a new instance of the <see cref="GraderFormControl" /> class.
+        /// </summary>
         public GraderFormControl()
         {
             this.InitializeComponent();
             this.SetPointValue(3, 2, 1, 0);
+            this.btnOne.Checked = true;
         }
 
         #endregion
@@ -32,6 +37,13 @@ namespace GraderFormControl
 
         #endregion
 
+        /// <summary>
+        ///     Sets the point value for each button.
+        /// </summary>
+        /// <param name="one">The value to pass to the first button.</param>
+        /// <param name="two">The value to pass to the second button.</param>
+        /// <param name="three">The value to pass to the third button.</param>
+        /// <param name="four">The value to pass to the fourth button.</param>
         public void SetPointValue(int one, int two, int three, int four)
         {
             this.btnOne.Tag = one;
@@ -49,6 +61,10 @@ namespace GraderFormControl
             this.btnFour.Text = ("Unsatisfactory (" + this.btnFour.Tag + ")");
         }
 
+        /// <summary>
+        ///     Adds a comment to the comment list.
+        /// </summary>
+        /// <param name="comment">The comment to be added.</param>
         public void AddComment(string comment)
         {
             if (this.dgvComments.RowCount == 0)
@@ -62,6 +78,10 @@ namespace GraderFormControl
             }
         }
 
+        /// <summary>
+        ///     Gets the checked comments and returns a string with all the comments.
+        /// </summary>
+        /// <returns>All comments that were checked.</returns>
         public string GetCheckedComments()
         {
             var comments = "";
@@ -86,10 +106,13 @@ namespace GraderFormControl
 
         private int getCheckedButtonValue()
         {
-            var checkedButton = this.boxRadioButtons.Controls.OfType<RadioButton>().FirstOrDefault(r => r.Checked);
+            var checkedButton = this.boxRadioButtons.Controls.OfType<RadioButton>().First(r => r.Checked);
             return (int) checkedButton.Tag;
         }
 
+        /// <summary>
+        ///     Clears all the check boxes in the data grid.
+        /// </summary>
         public void ClearCheckBoxes()
         {
             foreach (DataGridViewRow row in this.dgvComments.Rows)
@@ -110,18 +133,13 @@ namespace GraderFormControl
             this.onDataChanged(args);
         }
 
-        //public delegate void MessageSentHandler(string message);
-
         public event EventHandler<DataChangedEventArgs> DataChanged;
 
         private void onDataChanged(DataChangedEventArgs args)
         {
             var handler = this.DataChanged;
 
-            if (handler != null)
-            {
-                handler(this, args);
-            }
+            handler?.Invoke(this, args);
         }
     }
 }

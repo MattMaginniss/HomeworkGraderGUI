@@ -5,11 +5,13 @@ using System.Windows.Forms;
 
 namespace HomeworkGrader
 {
-    [Serializable]
     public partial class HomeworkGraderForm : Form
     {
         #region Constructors
 
+        /// <summary>
+        ///     Initializes a new instance of the <see cref="HomeworkGraderForm" /> class.
+        /// </summary>
         public HomeworkGraderForm()
         {
             this.InitializeComponent();
@@ -33,6 +35,10 @@ namespace HomeworkGrader
                     currentPage.Controls.Cast<GraderFormControl.GraderFormControl>()
                                .FirstOrDefault(x => x != null);
 
+                if (control == null)
+                {
+                    continue;
+                }
                 var header = currentPage.Text + " " + control.CurrentPoints + "/" + control.MaxPoints +
                              Environment.NewLine;
 
@@ -91,6 +97,14 @@ namespace HomeworkGrader
         private void clearTextBox()
         {
             this.txtOutput.Text = "";
+        }
+
+        private void menuBtnSave_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void menuBtnLoad_Click(object sender, EventArgs e)
+        {
         }
     }
 }

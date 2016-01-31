@@ -33,16 +33,21 @@
             this.btnCopy = new System.Windows.Forms.Button();
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tabPageFunctionality = new System.Windows.Forms.TabPage();
-            this.controlFunctionality = new GraderFormControl.GraderFormControl();
             this.tabPageImplementation = new System.Windows.Forms.TabPage();
-            this.controlImplementation = new GraderFormControl.GraderFormControl();
             this.tabPageDocumentation = new System.Windows.Forms.TabPage();
-            this.controlDocumentation = new GraderFormControl.GraderFormControl();
             this.btnClear = new System.Windows.Forms.Button();
+            this.controlFunctionality = new GraderFormControl.GraderFormControl();
+            this.controlImplementation = new GraderFormControl.GraderFormControl();
+            this.controlDocumentation = new GraderFormControl.GraderFormControl();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.commentsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuBtnSave = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuBtnLoad = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControl.SuspendLayout();
             this.tabPageFunctionality.SuspendLayout();
             this.tabPageImplementation.SuspendLayout();
             this.tabPageDocumentation.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtOutput
@@ -84,13 +89,6 @@
             this.tabPageFunctionality.Text = "Functionality";
             this.tabPageFunctionality.UseVisualStyleBackColor = true;
             // 
-            // controlFunctionality
-            // 
-            this.controlFunctionality.Location = new System.Drawing.Point(-3, -1);
-            this.controlFunctionality.Name = "controlFunctionality";
-            this.controlFunctionality.Size = new System.Drawing.Size(551, 338);
-            this.controlFunctionality.TabIndex = 0;
-            // 
             // tabPageImplementation
             // 
             this.tabPageImplementation.Controls.Add(this.controlImplementation);
@@ -101,13 +99,6 @@
             this.tabPageImplementation.TabIndex = 1;
             this.tabPageImplementation.Text = "Implementation";
             this.tabPageImplementation.UseVisualStyleBackColor = true;
-            // 
-            // controlImplementation
-            // 
-            this.controlImplementation.Location = new System.Drawing.Point(-3, -1);
-            this.controlImplementation.Name = "controlImplementation";
-            this.controlImplementation.Size = new System.Drawing.Size(551, 338);
-            this.controlImplementation.TabIndex = 0;
             // 
             // tabPageDocumentation
             // 
@@ -120,13 +111,6 @@
             this.tabPageDocumentation.Text = "Documentation";
             this.tabPageDocumentation.UseVisualStyleBackColor = true;
             // 
-            // controlDocumentation
-            // 
-            this.controlDocumentation.Location = new System.Drawing.Point(-3, -1);
-            this.controlDocumentation.Name = "controlDocumentation";
-            this.controlDocumentation.Size = new System.Drawing.Size(551, 338);
-            this.controlDocumentation.TabIndex = 4;
-            // 
             // btnClear
             // 
             this.btnClear.Location = new System.Drawing.Point(304, 724);
@@ -137,6 +121,60 @@
             this.btnClear.UseVisualStyleBackColor = true;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
+            // controlFunctionality
+            // 
+            this.controlFunctionality.Location = new System.Drawing.Point(-3, -1);
+            this.controlFunctionality.Name = "controlFunctionality";
+            this.controlFunctionality.Size = new System.Drawing.Size(551, 338);
+            this.controlFunctionality.TabIndex = 0;
+            // 
+            // controlImplementation
+            // 
+            this.controlImplementation.Location = new System.Drawing.Point(-3, -1);
+            this.controlImplementation.Name = "controlImplementation";
+            this.controlImplementation.Size = new System.Drawing.Size(551, 338);
+            this.controlImplementation.TabIndex = 0;
+            // 
+            // controlDocumentation
+            // 
+            this.controlDocumentation.Location = new System.Drawing.Point(-3, -1);
+            this.controlDocumentation.Name = "controlDocumentation";
+            this.controlDocumentation.Size = new System.Drawing.Size(551, 338);
+            this.controlDocumentation.TabIndex = 4;
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.commentsToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(579, 24);
+            this.menuStrip1.TabIndex = 5;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // commentsToolStripMenuItem
+            // 
+            this.commentsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuBtnSave,
+            this.menuBtnLoad});
+            this.commentsToolStripMenuItem.Name = "commentsToolStripMenuItem";
+            this.commentsToolStripMenuItem.Size = new System.Drawing.Size(78, 20);
+            this.commentsToolStripMenuItem.Text = "Comments";
+            // 
+            // menuBtnSave
+            // 
+            this.menuBtnSave.Name = "menuBtnSave";
+            this.menuBtnSave.Size = new System.Drawing.Size(152, 22);
+            this.menuBtnSave.Text = "Save";
+            this.menuBtnSave.Click += new System.EventHandler(this.menuBtnSave_Click);
+            // 
+            // menuBtnLoad
+            // 
+            this.menuBtnLoad.Name = "menuBtnLoad";
+            this.menuBtnLoad.Size = new System.Drawing.Size(152, 22);
+            this.menuBtnLoad.Text = "Load";
+            this.menuBtnLoad.Click += new System.EventHandler(this.menuBtnLoad_Click);
+            // 
             // HomeworkGraderForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -146,12 +184,16 @@
             this.Controls.Add(this.tabControl);
             this.Controls.Add(this.btnCopy);
             this.Controls.Add(this.txtOutput);
+            this.Controls.Add(this.menuStrip1);
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "HomeworkGraderForm";
             this.Text = "Homework Grader by Matthew Maginniss";
             this.tabControl.ResumeLayout(false);
             this.tabPageFunctionality.ResumeLayout(false);
             this.tabPageImplementation.ResumeLayout(false);
             this.tabPageDocumentation.ResumeLayout(false);
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -169,6 +211,10 @@
         private GraderFormControl.GraderFormControl controlImplementation;
         private GraderFormControl.GraderFormControl controlDocumentation;
         private System.Windows.Forms.Button btnClear;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem commentsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem menuBtnSave;
+        private System.Windows.Forms.ToolStripMenuItem menuBtnLoad;
     }
 }
 

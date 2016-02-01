@@ -1,7 +1,0 @@
-D:\School\CS\3202\Assignment 1\Homework Grader by Matthew Maginniss\GraderFormControl\bin\Debug\GraderFormControl.dll
-D:\School\CS\3202\Assignment 1\Homework Grader by Matthew Maginniss\GraderFormControl\bin\Debug\GraderFormControl.pdb
-D:\School\CS\3202\Assignment 1\Homework Grader by Matthew Maginniss\GraderFormControl\obj\Debug\GraderFormControl.csproj.GenerateResource.Cache
-D:\School\CS\3202\Assignment 1\Homework Grader by Matthew Maginniss\GraderFormControl\obj\Debug\GraderFormControl.dll
-D:\School\CS\3202\Assignment 1\Homework Grader by Matthew Maginniss\GraderFormControl\obj\Debug\GraderFormControl.pdb
-D:\School\CS\3202\Assignment 1\Homework Grader by Matthew Maginniss\GraderFormControl\obj\Debug\GraderFormControl.csprojResolveAssemblyReference.cache
-D:\School\CS\3202\Assignment 1\Homework Grader by Matthew Maginniss\GraderFormControl\obj\Debug\GraderFormControl.GraderFormControl.resources

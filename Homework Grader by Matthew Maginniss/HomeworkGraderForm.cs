@@ -6,6 +6,9 @@ using System.Windows.Forms;
 
 namespace HomeworkGrader
 {
+    /// <summary>
+    ///     Windows form meant to generate a score and comments to score homework.
+    /// </summary>
     public partial class HomeworkGraderForm : Form
     {
         #region Constructors
@@ -167,16 +170,15 @@ namespace HomeworkGrader
                 }
                 control.ClearComments();
 
-                var line = "";
-
-                line = this.readToBeginningOfComments(line, reader, currentPage);
+                var line = this.readToBeginningOfComments(reader, currentPage);
 
                 this.addCommentsFromFile(line, currentPage, reader, control);
             }
         }
 
-        private string readToBeginningOfComments(string line, StreamReader reader, TabPage currentPage)
+        private string readToBeginningOfComments(StreamReader reader, TabPage currentPage)
         {
+            string line;
             do
             {
                 line = reader.ReadLine();

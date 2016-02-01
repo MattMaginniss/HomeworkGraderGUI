@@ -4,12 +4,27 @@ using System.Windows.Forms;
 
 namespace GraderFormControl
 {
+    /// <summary>
+    ///     Grading Form Control for a that has radio buttons for points and comment selections
+    /// </summary>
     public partial class GraderFormControl : UserControl
     {
         #region Properties
 
+        /// <summary>
+        ///     Gets the current points.
+        /// </summary>
+        /// <value>
+        ///     The current points.
+        /// </value>
         public int CurrentPoints => this.getCheckedButtonValue();
 
+        /// <summary>
+        ///     Gets the maximum points.
+        /// </summary>
+        /// <value>
+        ///     The maximum points.
+        /// </value>
         public int MaxPoints => (int) this.btnOne.Tag;
 
         #endregion
@@ -108,7 +123,7 @@ namespace GraderFormControl
         }
 
         /// <summary>
-        /// Gets all comments from the data grid view
+        ///     Gets all comments from the data grid view
         /// </summary>
         /// <returns>All comments</returns>
         public string GetAllComments()
@@ -117,7 +132,7 @@ namespace GraderFormControl
 
             foreach (DataGridViewRow row in this.dgvComments.Rows)
             {
-                var textCell = (DataGridViewTextBoxCell)row.Cells[1];
+                var textCell = (DataGridViewTextBoxCell) row.Cells[1];
 
                 if (textCell.Value != null)
                 {
@@ -128,7 +143,7 @@ namespace GraderFormControl
         }
 
         /// <summary>
-        /// Clears the comments from the data grid view.
+        ///     Clears the comments from the data grid view.
         /// </summary>
         public void ClearComments()
         {
@@ -165,7 +180,7 @@ namespace GraderFormControl
         }
 
         /// <summary>
-        /// Event that occurs when [data changed].
+        ///     Event that occurs when [data changed].
         /// </summary>
         public event EventHandler<DataChangedEventArgs> DataChanged;
 

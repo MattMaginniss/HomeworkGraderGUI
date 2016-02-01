@@ -208,7 +208,6 @@
         private System.Windows.Forms.TabControl tabControl;
         private System.Windows.Forms.TabPage tabPageFunctionality;
         private System.Windows.Forms.TabPage tabPageImplementation;
-        private GraderFormControl.GraderFormControl homeworkFormControl1;
         private System.Windows.Forms.TabPage tabPageDocumentation;
         private GraderFormControl.GraderFormControl controlFunctionality;
         private GraderFormControl.GraderFormControl controlImplementation;

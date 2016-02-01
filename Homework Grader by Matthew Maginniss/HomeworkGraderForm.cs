@@ -112,6 +112,13 @@ namespace HomeworkGrader
         {
             var writer = new StreamWriter("../../../CustomComments.txt");
 
+            this.iterateThroughTabsForSave(writer);
+
+            writer.Close();
+        }
+
+        private void iterateThroughTabsForSave(StreamWriter writer)
+        {
             foreach (TabPage currentPage in this.tabControl.TabPages)
             {
                 var control =
@@ -123,8 +130,6 @@ namespace HomeworkGrader
                 }
                 this.writeCommentsToFile(writer, currentPage, control);
             }
-
-            writer.Close();
         }
 
         private void writeCommentsToFile(StreamWriter writer, TabPage currentPage,
@@ -143,6 +148,14 @@ namespace HomeworkGrader
                 return;
             }
             var reader = new StreamReader("../../../CustomComments.txt");
+
+            this.iterateThroughTabsForLoad(reader);
+
+            reader.Close();
+        }
+
+        private void iterateThroughTabsForLoad(StreamReader reader)
+        {
             foreach (TabPage currentPage in this.tabControl.TabPages)
             {
                 var control =
@@ -160,7 +173,6 @@ namespace HomeworkGrader
 
                 this.addCommentsFromFile(line, currentPage, reader, control);
             }
-            reader.Close();
         }
 
         private string readToBeginningOfComments(string line, StreamReader reader, TabPage currentPage)

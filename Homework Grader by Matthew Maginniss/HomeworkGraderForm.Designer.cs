@@ -33,16 +33,16 @@
             this.btnCopy = new System.Windows.Forms.Button();
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tabPageFunctionality = new System.Windows.Forms.TabPage();
-            this.controlFunctionality = new GraderFormControl.GraderFormControl();
             this.tabPageImplementation = new System.Windows.Forms.TabPage();
-            this.controlImplementation = new GraderFormControl.GraderFormControl();
             this.tabPageDocumentation = new System.Windows.Forms.TabPage();
-            this.controlDocumentation = new GraderFormControl.GraderFormControl();
             this.btnClear = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.commentsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuBtnSave = new System.Windows.Forms.ToolStripMenuItem();
             this.menuBtnLoad = new System.Windows.Forms.ToolStripMenuItem();
+            this.controlFunctionality = new GraderFormControl.GraderFormControl();
+            this.controlImplementation = new GraderFormControl.GraderFormControl();
+            this.controlDocumentation = new GraderFormControl.GraderFormControl();
             this.tabControl.SuspendLayout();
             this.tabPageFunctionality.SuspendLayout();
             this.tabPageImplementation.SuspendLayout();
@@ -90,13 +90,6 @@
             this.tabPageFunctionality.Text = "Functionality";
             this.tabPageFunctionality.UseVisualStyleBackColor = true;
             // 
-            // controlFunctionality
-            // 
-            this.controlFunctionality.Location = new System.Drawing.Point(-3, -1);
-            this.controlFunctionality.Name = "controlFunctionality";
-            this.controlFunctionality.Size = new System.Drawing.Size(551, 338);
-            this.controlFunctionality.TabIndex = 0;
-            // 
             // tabPageImplementation
             // 
             this.tabPageImplementation.Controls.Add(this.controlImplementation);
@@ -108,13 +101,6 @@
             this.tabPageImplementation.Text = "Implementation";
             this.tabPageImplementation.UseVisualStyleBackColor = true;
             // 
-            // controlImplementation
-            // 
-            this.controlImplementation.Location = new System.Drawing.Point(-3, -1);
-            this.controlImplementation.Name = "controlImplementation";
-            this.controlImplementation.Size = new System.Drawing.Size(551, 338);
-            this.controlImplementation.TabIndex = 0;
-            // 
             // tabPageDocumentation
             // 
             this.tabPageDocumentation.Controls.Add(this.controlDocumentation);
@@ -125,13 +111,6 @@
             this.tabPageDocumentation.TabIndex = 2;
             this.tabPageDocumentation.Text = "Documentation";
             this.tabPageDocumentation.UseVisualStyleBackColor = true;
-            // 
-            // controlDocumentation
-            // 
-            this.controlDocumentation.Location = new System.Drawing.Point(-3, -1);
-            this.controlDocumentation.Name = "controlDocumentation";
-            this.controlDocumentation.Size = new System.Drawing.Size(551, 338);
-            this.controlDocumentation.TabIndex = 4;
             // 
             // btnClear
             // 
@@ -160,21 +139,44 @@
             this.menuBtnLoad});
             this.commentsToolStripMenuItem.Name = "commentsToolStripMenuItem";
             this.commentsToolStripMenuItem.Size = new System.Drawing.Size(78, 20);
-            this.commentsToolStripMenuItem.Text = "Comments";
+            this.commentsToolStripMenuItem.Text = "&Comments";
             // 
             // menuBtnSave
             // 
             this.menuBtnSave.Name = "menuBtnSave";
-            this.menuBtnSave.Size = new System.Drawing.Size(100, 22);
+            this.menuBtnSave.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
+            this.menuBtnSave.Size = new System.Drawing.Size(152, 22);
             this.menuBtnSave.Text = "Save";
             this.menuBtnSave.Click += new System.EventHandler(this.menuBtnSave_Click);
             // 
             // menuBtnLoad
             // 
             this.menuBtnLoad.Name = "menuBtnLoad";
-            this.menuBtnLoad.Size = new System.Drawing.Size(100, 22);
+            this.menuBtnLoad.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.L)));
+            this.menuBtnLoad.Size = new System.Drawing.Size(152, 22);
             this.menuBtnLoad.Text = "Load";
             this.menuBtnLoad.Click += new System.EventHandler(this.menuBtnLoad_Click);
+            // 
+            // controlFunctionality
+            // 
+            this.controlFunctionality.Location = new System.Drawing.Point(-3, -1);
+            this.controlFunctionality.Name = "controlFunctionality";
+            this.controlFunctionality.Size = new System.Drawing.Size(551, 338);
+            this.controlFunctionality.TabIndex = 0;
+            // 
+            // controlImplementation
+            // 
+            this.controlImplementation.Location = new System.Drawing.Point(-3, -1);
+            this.controlImplementation.Name = "controlImplementation";
+            this.controlImplementation.Size = new System.Drawing.Size(551, 338);
+            this.controlImplementation.TabIndex = 0;
+            // 
+            // controlDocumentation
+            // 
+            this.controlDocumentation.Location = new System.Drawing.Point(-3, -1);
+            this.controlDocumentation.Name = "controlDocumentation";
+            this.controlDocumentation.Size = new System.Drawing.Size(551, 338);
+            this.controlDocumentation.TabIndex = 4;
             // 
             // HomeworkGraderForm
             // 

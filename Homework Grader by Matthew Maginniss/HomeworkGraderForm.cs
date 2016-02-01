@@ -23,6 +23,8 @@ namespace HomeworkGrader
             this.controlFunctionality.DataChanged += this.updateData;
             this.controlImplementation.DataChanged += this.updateData;
             this.controlDocumentation.DataChanged += this.updateData;
+
+            this.clearTextBox();
         }
 
         #endregion
@@ -136,6 +138,10 @@ namespace HomeworkGrader
 
         private void menuBtnLoad_Click(object sender, EventArgs e)
         {
+            if (!File.Exists("../../../CustomComments.txt"))
+            {
+                return;
+            }
             var reader = new StreamReader("../../../CustomComments.txt");
             foreach (TabPage currentPage in this.tabControl.TabPages)
             {
@@ -169,16 +175,19 @@ namespace HomeworkGrader
         private void addCommentsFromFile(string line, TabPage currentPage, StreamReader reader,
             GraderFormControl.GraderFormControl control)
         {
-            while (line != null && !line.Equals("</" + currentPage.Text + ">"))
+            do
             {
-                control.AddComment(line);
+                if (line != null && !line.Equals("<" + currentPage.Text + ">"))
+                {
+                    control.AddComment(line);
+                }
                 line = reader.ReadLine();
-            }
+            } while (line != null && !line.Equals("</" + currentPage.Text + ">"));
         }
 
         private void btnCopy_Click(object sender, EventArgs e)
         {
-            Clipboard.SetText(this.txtOutput.Text);
+            Clipboard.SetText(this.txtOutput.Text + " ");
         }
     }
 }

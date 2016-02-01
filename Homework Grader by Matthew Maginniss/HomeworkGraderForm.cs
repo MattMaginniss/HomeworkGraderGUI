@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -49,6 +50,12 @@ namespace HomeworkGrader
             }
 
             this.clearTextBox();
+
+            this.writeCommentsToOutput(comments);
+        }
+
+        private void writeCommentsToOutput(List<string> comments)
+        {
             foreach (var line in comments)
             {
                 this.txtOutput.Text += line;
@@ -101,10 +108,77 @@ namespace HomeworkGrader
 
         private void menuBtnSave_Click(object sender, EventArgs e)
         {
+            var writer = new StreamWriter("../../../CustomComments.txt");
+
+            foreach (TabPage currentPage in this.tabControl.TabPages)
+            {
+                var control =
+                    currentPage.Controls.Cast<GraderFormControl.GraderFormControl>()
+                               .FirstOrDefault(x => x != null);
+                if (control == null)
+                {
+                    continue;
+                }
+                this.writeCommentsToFile(writer, currentPage, control);
+            }
+
+            writer.Close();
+        }
+
+        private void writeCommentsToFile(StreamWriter writer, TabPage currentPage,
+            GraderFormControl.GraderFormControl control)
+        {
+            writer.WriteLine("<" + currentPage.Text + ">");
+            var comments = control.GetAllComments();
+            writer.Write(comments);
+            writer.WriteLine("</" + currentPage.Text + ">" + Environment.NewLine);
         }
 
         private void menuBtnLoad_Click(object sender, EventArgs e)
         {
+            var reader = new StreamReader("../../../CustomComments.txt");
+            foreach (TabPage currentPage in this.tabControl.TabPages)
+            {
+                var control =
+                    currentPage.Controls.Cast<GraderFormControl.GraderFormControl>()
+                               .FirstOrDefault(x => x != null);
+                if (control == null)
+                {
+                    continue;
+                }
+                control.ClearComments();
+
+                var line = "";
+
+                line = this.readToBeginningOfComments(line, reader, currentPage);
+
+                this.addCommentsFromFile(line, currentPage, reader, control);
+            }
+            reader.Close();
+        }
+
+        private string readToBeginningOfComments(string line, StreamReader reader, TabPage currentPage)
+        {
+            do
+            {
+                line = reader.ReadLine();
+            } while (line != null && !line.Equals("<" + currentPage.Text + ">"));
+            return line;
+        }
+
+        private void addCommentsFromFile(string line, TabPage currentPage, StreamReader reader,
+            GraderFormControl.GraderFormControl control)
+        {
+            while (line != null && !line.Equals("</" + currentPage.Text + ">"))
+            {
+                control.AddComment(line);
+                line = reader.ReadLine();
+            }
+        }
+
+        private void btnCopy_Click(object sender, EventArgs e)
+        {
+            Clipboard.SetText(this.txtOutput.Text);
         }
     }
 }

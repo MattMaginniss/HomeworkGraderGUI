@@ -33,12 +33,12 @@
             this.btnCopy = new System.Windows.Forms.Button();
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tabPageFunctionality = new System.Windows.Forms.TabPage();
-            this.tabPageImplementation = new System.Windows.Forms.TabPage();
-            this.tabPageDocumentation = new System.Windows.Forms.TabPage();
-            this.btnClear = new System.Windows.Forms.Button();
             this.controlFunctionality = new GraderFormControl.GraderFormControl();
+            this.tabPageImplementation = new System.Windows.Forms.TabPage();
             this.controlImplementation = new GraderFormControl.GraderFormControl();
+            this.tabPageDocumentation = new System.Windows.Forms.TabPage();
             this.controlDocumentation = new GraderFormControl.GraderFormControl();
+            this.btnClear = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.commentsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuBtnSave = new System.Windows.Forms.ToolStripMenuItem();
@@ -66,6 +66,7 @@
             this.btnCopy.TabIndex = 2;
             this.btnCopy.Text = "Copy";
             this.btnCopy.UseVisualStyleBackColor = true;
+            this.btnCopy.Click += new System.EventHandler(this.btnCopy_Click);
             // 
             // tabControl
             // 
@@ -89,6 +90,13 @@
             this.tabPageFunctionality.Text = "Functionality";
             this.tabPageFunctionality.UseVisualStyleBackColor = true;
             // 
+            // controlFunctionality
+            // 
+            this.controlFunctionality.Location = new System.Drawing.Point(-3, -1);
+            this.controlFunctionality.Name = "controlFunctionality";
+            this.controlFunctionality.Size = new System.Drawing.Size(551, 338);
+            this.controlFunctionality.TabIndex = 0;
+            // 
             // tabPageImplementation
             // 
             this.tabPageImplementation.Controls.Add(this.controlImplementation);
@@ -99,6 +107,13 @@
             this.tabPageImplementation.TabIndex = 1;
             this.tabPageImplementation.Text = "Implementation";
             this.tabPageImplementation.UseVisualStyleBackColor = true;
+            // 
+            // controlImplementation
+            // 
+            this.controlImplementation.Location = new System.Drawing.Point(-3, -1);
+            this.controlImplementation.Name = "controlImplementation";
+            this.controlImplementation.Size = new System.Drawing.Size(551, 338);
+            this.controlImplementation.TabIndex = 0;
             // 
             // tabPageDocumentation
             // 
@@ -111,6 +126,13 @@
             this.tabPageDocumentation.Text = "Documentation";
             this.tabPageDocumentation.UseVisualStyleBackColor = true;
             // 
+            // controlDocumentation
+            // 
+            this.controlDocumentation.Location = new System.Drawing.Point(-3, -1);
+            this.controlDocumentation.Name = "controlDocumentation";
+            this.controlDocumentation.Size = new System.Drawing.Size(551, 338);
+            this.controlDocumentation.TabIndex = 4;
+            // 
             // btnClear
             // 
             this.btnClear.Location = new System.Drawing.Point(304, 724);
@@ -120,27 +142,6 @@
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = true;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
-            // 
-            // controlFunctionality
-            // 
-            this.controlFunctionality.Location = new System.Drawing.Point(-3, -1);
-            this.controlFunctionality.Name = "controlFunctionality";
-            this.controlFunctionality.Size = new System.Drawing.Size(551, 338);
-            this.controlFunctionality.TabIndex = 0;
-            // 
-            // controlImplementation
-            // 
-            this.controlImplementation.Location = new System.Drawing.Point(-3, -1);
-            this.controlImplementation.Name = "controlImplementation";
-            this.controlImplementation.Size = new System.Drawing.Size(551, 338);
-            this.controlImplementation.TabIndex = 0;
-            // 
-            // controlDocumentation
-            // 
-            this.controlDocumentation.Location = new System.Drawing.Point(-3, -1);
-            this.controlDocumentation.Name = "controlDocumentation";
-            this.controlDocumentation.Size = new System.Drawing.Size(551, 338);
-            this.controlDocumentation.TabIndex = 4;
             // 
             // menuStrip1
             // 
@@ -164,14 +165,14 @@
             // menuBtnSave
             // 
             this.menuBtnSave.Name = "menuBtnSave";
-            this.menuBtnSave.Size = new System.Drawing.Size(152, 22);
+            this.menuBtnSave.Size = new System.Drawing.Size(100, 22);
             this.menuBtnSave.Text = "Save";
             this.menuBtnSave.Click += new System.EventHandler(this.menuBtnSave_Click);
             // 
             // menuBtnLoad
             // 
             this.menuBtnLoad.Name = "menuBtnLoad";
-            this.menuBtnLoad.Size = new System.Drawing.Size(152, 22);
+            this.menuBtnLoad.Size = new System.Drawing.Size(100, 22);
             this.menuBtnLoad.Text = "Load";
             this.menuBtnLoad.Click += new System.EventHandler(this.menuBtnLoad_Click);
             // 

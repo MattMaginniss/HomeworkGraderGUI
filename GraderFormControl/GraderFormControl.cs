@@ -4,7 +4,6 @@ using System.Windows.Forms;
 
 namespace GraderFormControl
 {
-    [Serializable]
     public partial class GraderFormControl : UserControl
     {
         #region Properties
@@ -31,6 +30,9 @@ namespace GraderFormControl
 
         #region Methods
 
+        /// <summary>
+        ///     Custom EventArgs child class that is invoked when any data is changed.
+        /// </summary>
         public class DataChangedEventArgs : EventArgs
         {
         }
@@ -38,18 +40,18 @@ namespace GraderFormControl
         #endregion
 
         /// <summary>
-        ///     Sets the point value for each button.
+        ///     Sets the point value.
         /// </summary>
-        /// <param name="one">The value to pass to the first button.</param>
-        /// <param name="two">The value to pass to the second button.</param>
-        /// <param name="three">The value to pass to the third button.</param>
-        /// <param name="four">The value to pass to the fourth button.</param>
-        public void SetPointValue(int one, int two, int three, int four)
+        /// <param name="exceptional">The exceptional value.</param>
+        /// <param name="acceptable">The acceptable value.</param>
+        /// <param name="amateur">The amateur value.</param>
+        /// <param name="unsatisfactory">The unsatisfactory value.</param>
+        public void SetPointValue(int exceptional, int acceptable, int amateur, int unsatisfactory)
         {
-            this.btnOne.Tag = one;
-            this.btnTwo.Tag = two;
-            this.btnThree.Tag = three;
-            this.btnFour.Tag = four;
+            this.btnOne.Tag = exceptional;
+            this.btnTwo.Tag = acceptable;
+            this.btnThree.Tag = amateur;
+            this.btnFour.Tag = unsatisfactory;
             this.setButtonLabels();
         }
 
@@ -79,9 +81,9 @@ namespace GraderFormControl
         }
 
         /// <summary>
-        ///     Gets the checked comments and returns a string with all the comments.
+        ///     Gets the checked comments from the data grid of comments.
         /// </summary>
-        /// <returns>All comments that were checked.</returns>
+        /// <returns>A string of all the comments that have been selected.</returns>
         public string GetCheckedComments()
         {
             var comments = "";
@@ -90,18 +92,47 @@ namespace GraderFormControl
             {
                 var cell = (DataGridViewCheckBoxCell) row.Cells[0];
 
-                if (Convert.ToBoolean(cell.EditingCellFormattedValue))
+                if (!Convert.ToBoolean(cell.EditingCellFormattedValue))
                 {
-                    var textCell = (DataGridViewTextBoxCell) row.Cells[1];
+                    continue;
+                }
+                var textCell = (DataGridViewTextBoxCell) row.Cells[1];
 
-                    if (textCell.Value != null)
-                    {
-                        comments += textCell.Value + Environment.NewLine;
-                    }
+                if (textCell.Value != null)
+                {
+                    comments += textCell.Value + Environment.NewLine;
                 }
             }
 
             return comments;
+        }
+
+        /// <summary>
+        /// Gets all comments from the data grid view
+        /// </summary>
+        /// <returns>All comments</returns>
+        public string GetAllComments()
+        {
+            var comments = "";
+
+            foreach (DataGridViewRow row in this.dgvComments.Rows)
+            {
+                var textCell = (DataGridViewTextBoxCell)row.Cells[1];
+
+                if (textCell.Value != null)
+                {
+                    comments += textCell.Value + Environment.NewLine;
+                }
+            }
+            return comments;
+        }
+
+        /// <summary>
+        /// Clears the comments from the data grid view.
+        /// </summary>
+        public void ClearComments()
+        {
+            this.dgvComments.Rows.Clear();
         }
 
         private int getCheckedButtonValue()
@@ -133,6 +164,9 @@ namespace GraderFormControl
             this.onDataChanged(args);
         }
 
+        /// <summary>
+        /// Event that occurs when [data changed].
+        /// </summary>
         public event EventHandler<DataChangedEventArgs> DataChanged;
 
         private void onDataChanged(DataChangedEventArgs args)

@@ -19,9 +19,7 @@ namespace HomeworkGrader
         public HomeworkGraderForm()
         {
             this.InitializeComponent();
-            this.initializeFunctionalityControl();
-            this.initializeImplementationControl();
-            this.initializeDocumentationControl();
+            this.initializeUserControls();
 
             this.controlFunctionality.DataChanged += this.updateData;
             this.controlImplementation.DataChanged += this.updateData;
@@ -31,6 +29,13 @@ namespace HomeworkGrader
         }
 
         #endregion
+
+        private void initializeUserControls()
+        {
+            this.initializeFunctionalityControl();
+            this.initializeImplementationControl();
+            this.initializeDocumentationControl();
+        }
 
         private void updateData(object sender, GraderFormControl.GraderFormControl.DataChangedEventArgs e)
         {
@@ -139,8 +144,10 @@ namespace HomeworkGrader
             GraderFormControl.GraderFormControl control)
         {
             writer.WriteLine("<" + currentPage.Text + ">");
+
             var comments = control.GetAllComments();
             writer.Write(comments);
+
             writer.WriteLine("</" + currentPage.Text + ">" + Environment.NewLine);
         }
 

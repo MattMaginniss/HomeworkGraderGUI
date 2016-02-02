@@ -180,7 +180,7 @@ namespace GraderFormControl
         }
 
         /// <summary>
-        ///     Event that occurs when [data changed].
+        ///     Event that fires when data is changed.
         /// </summary>
         public event EventHandler<DataChangedEventArgs> DataChanged;
 
